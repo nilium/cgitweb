@@ -1,0 +1,37 @@
+# Default config
+#
+# Config values are written K=V. Whitepsace around the equals sign and at EOL is
+# preserved. Only K is required. If there is an = but no V, the value is empty.
+# If there is no =, the value is TRUE. Multiple K=V values with the same K stack
+# and the last value wins.
+#
+# Boolean values may be TRUE, FALSE, T, F, 0, 1, YES, NO, ON, or OFF.
+# All boolean values are case insensitive. Other values are ignored.
+#
+# Lines beginning in whitespace or a pound (#) are treated as comments. Empty
+# lines are ignord.
+
+### cgit-path is the path to cgit.cgi
+### The location must exist and be an executable file.
+cgit-path=/usr/local/www/cgit.cgi
+
+### max-request-size is the maximum request size permitted for a request body.
+### If less than 0, no maximum is enforced.
+max-request-size=-1
+
+### prefix is the server root used when forwarding to cgit.cgi
+prefix=/
+
+### trim-suffix specifies whether to trim the .git suffix from project paths
+### This can be used to compensate for gerrit's utter disdain for its own config files.
+trim-suffix=0
+
+### cgit-arg adds an argument to be passed to cgit.cgi (in case it's not actually cgit)
+### cgit-arg values are passed as single arguments, in order, to cgit-path
+# cgit-arg=ARG
+
+### cgit-env.NAME overrides environment variables before forwarding to cgit.cgi
+# cgit-env.NAME=VALUE
+
+### env.NAME overrides environment variables prior to parsing the CGI request
+# env.NAME=VALUE

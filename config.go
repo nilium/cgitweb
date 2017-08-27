@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"sort"
 	"strconv"
 	"strings"
 	"unicode"
@@ -15,10 +16,11 @@ type Config map[string][]string
 
 func (cfg Config) toEnvironment() (env []string) {
 	for k, vs := range cfg {
-		for _, v := range vs {
-			env = append(env, k+"="+v)
+		if len(vs) > 0 {
+			env = append(env, k+"="+vs[len(vs)-1])
 		}
 	}
+	sort.Strings(env)
 	return env
 }
 
